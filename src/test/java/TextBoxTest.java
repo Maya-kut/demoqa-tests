@@ -45,11 +45,12 @@ static void beforeAll() {
         $("label[for=hobbies-checkbox-2]").click();
         $("label[for=hobbies-checkbox-3]").click();
 
-//        $("#uploadPicture").uploadFromClasspath(image.png);
+        $("#uploadPicture").uploadFromClasspath(image.png);
 
         $("#uploadPicture").setValue("Moscow, Red Square");
-
+        $("#state").click();
         $("#react-select-3-input").setValue("Haryana").pressEnter();
+        $("#city").click();
         $("#react-select-4-input").setValue("Panipat").pressEnter();
 
         $("[id=submit]").click();
