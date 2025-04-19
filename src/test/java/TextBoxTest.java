@@ -45,7 +45,7 @@ static void beforeAll() {
         $("label[for=hobbies-checkbox-2]").click();
         $("label[for=hobbies-checkbox-3]").click();
 
-        $("#uploadPicture").uploadFromClasspath(image.png);
+        File uploadFromClasspath = $("#uploadPicture").uploadFromClasspath(image.png);
 
         $("#uploadPicture").setValue("Moscow, Red Square");
         $("#state").click();
