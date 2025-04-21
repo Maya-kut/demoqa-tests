@@ -11,7 +11,6 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TextBoxTest {
-    private File Users;
 
     @BeforeAll
 static void beforeAll() {
@@ -19,8 +18,6 @@ static void beforeAll() {
 //    Configuration.browser = "chrome";
     Configuration.baseUrl = "https://demoqa.com";
     Configuration.pageLoadStrategy = "eager";
-    Configuration.timeout = 3000;
-    Configuration.holdBrowserOpen =true;
 }
 
     @Test
@@ -45,7 +42,7 @@ static void beforeAll() {
         $("label[for=hobbies-checkbox-2]").click();
         $("label[for=hobbies-checkbox-3]").click();
 
-        File uploadFromClasspath = $("#uploadPicture").uploadFromClasspath(image.png);
+        $("#uploadPicture").uploadFromClasspath("image.png");
 
         $("#uploadPicture").setValue("Moscow, Red Square");
         $("#state").click();
@@ -54,6 +51,22 @@ static void beforeAll() {
         $("#react-select-4-input").setValue("Panipat").pressEnter();
 
         $("[id=submit]").click();
+
+
+        $$(".table-responsive").findBy(text("Student Name")).shouldHave(text("Maiya M"));
+        $$(".table-responsive").findBy(text("Student Email")).shouldHave(text("maiya@mail.ru"));
+        $$(".table-responsive").findBy(text("Gender")).shouldHave(text("Female"));
+        $$(".table-responsive").findBy(text("Mobile")).shouldHave(text("88009008890"));
+        $$(".table-responsive").findBy(text("Date of Birth")).shouldHave(text("25 June,1996"));
+        $$(".table-responsive").findBy(text("Subjects")).shouldHave(text("Maths, Biology"));
+        $$(".table-responsive").findBy(text("Hobbies")).shouldHave(text("Sports, Reading, Music"));
+        $$(".table-responsive").findBy(text("Picture")).shouldHave(text("image.png"));
+        $$(".table-responsive").findBy(text("Address")).shouldHave(text("Moscow, Red Square"));
+        $$(".table-responsive").findBy(text("State and City")).shouldHave(text("Haryana Panipat"));
+
+        $("#closeLargeModal").click();
+
+
 
 
 
