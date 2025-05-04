@@ -14,7 +14,7 @@ public class PracticeFormTestAllFields {
         Configuration.browser = "chrome";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
+//        Configuration.holdBrowserOpen = true;
     }
 
     @Test
