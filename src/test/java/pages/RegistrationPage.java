@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
@@ -14,7 +15,7 @@ public class RegistrationPage {
     private SelenideElement userNumberInput = $("#userNumber");
     private SelenideElement calendarInput = $("#dateOfBirthInput");
     private SelenideElement subjectInput = $("#subjectsInput");
-    private SelenideElement hobbiesCheckbox = $("label[for=hobbies-checkbox-2]");
+    private SelenideElement hobbyChoice = $("#hobbiesWrapper").$(byText("Sports"));
     private SelenideElement uploadPicture = $("#uploadPicture");
     private SelenideElement AddressTextArea = $("#currentAddress");
     private SelenideElement selectState = $("#state");
@@ -77,8 +78,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setHobbies(String hobbie) {
-        hobbiesCheckbox.click();
+    public RegistrationPage setHobbies(String hobby) {
+        hobbyChoice.click();
 
         return this;
     }
@@ -97,13 +98,13 @@ public class RegistrationPage {
 
     public RegistrationPage setState(String state) {
         selectState.click();
-        getSelectState.find(String.valueOf(text(state))).click();
+        getSelectState.find(String.valueOf(text("Haryana"))).click();
         return this;
     }
 
     public RegistrationPage setCity(String city) {
         selectCity.click();
-        getSelectCity.find(String.valueOf(text(city))).click();
+        getSelectCity.find(String.valueOf(text("Panipat"))).click();
         return this;
     }
 
@@ -117,8 +118,14 @@ public class RegistrationPage {
 
         return this;
     }
+
+
     public void clickCloseLargeModal(){
         closeButton.click();
+    }
+
+    public void checkUserForm() {
+        $("#userForm").shouldHave(Condition.cssClass("was-validated"));
     }
 }
 

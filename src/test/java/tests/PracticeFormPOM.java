@@ -14,7 +14,7 @@ public class PracticeFormPOM extends TestBase {
     String birthYear = "1996";
     String subjectOne = "Biology";
     String subjectTwo = "Math";
-    String hobbie = "Sports";
+    String hobby = "Sports";
     String address = "Moscow, Red Square";
     String state = "Haryana";
     String city = "Panipat";
@@ -32,7 +32,7 @@ public class PracticeFormPOM extends TestBase {
                 .setUserNumber(mobile)
                 .setDateOfBirth(birthDay, birthMonth, birthYear)
                 .setSubjects(subjectOne, subjectTwo)
-                .setHobbies(hobbie)
+                .setHobbies(hobby)
                 .upLoadPicture()
                 .setAddress(address)
                 .setState(state)
@@ -52,6 +52,31 @@ public class PracticeFormPOM extends TestBase {
                 .checkResult("State and City", "Haryana Panipat")
                 .clickCloseLargeModal();
 
+
+    }
+    @Test // Заполнение только обязательных параметров
+    void PracticeFormTestRequiredFields(){
+        RegistrationPage.openPage()
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setGender(gender)
+                .setUserNumber(mobile)
+                .clickSubmitButton();
+
+
+        //Проверка корректности заполнения формы
+        RegistrationPage.checkResult("Student Name", "Maiya M")
+                .checkResult("Gender", "Female")
+                .checkResult("Mobile", "8800900889")
+                .clickCloseLargeModal();
+    }
+
+    @Test // Отправка формы без заполнения параметров
+    void ClickSubmitWithoutFillingFields(){
+        RegistrationPage.openPage()
+                .clickSubmitButton();
+
+        RegistrationPage.checkUserForm();
 
     }
 }
