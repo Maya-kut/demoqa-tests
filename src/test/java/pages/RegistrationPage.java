@@ -72,7 +72,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setSubjects(String value, String subjectTwo) {
+    public RegistrationPage setSubjects(String value) {
         subjectInput.setValue(value).pressEnter();
 
         return this;
@@ -127,5 +127,6 @@ public class RegistrationPage {
     public void checkUserForm() {
         $("#userForm").shouldHave(Condition.cssClass("was-validated"));
     }
+
 }
 

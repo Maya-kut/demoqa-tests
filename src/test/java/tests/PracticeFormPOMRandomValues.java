@@ -1,23 +1,30 @@
 package tests;
 
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-public class PracticeFormPOM extends TestBase {
-    String firstName = "Maiya";
-    String lastName = "M";
-    String email = "maiya@mail.ru";
-    String gender = "Female";
-    String mobile = "8800900889";
-    String birthDay = "25";
-    String birthMonth = "June";
-    String birthYear = "1996";
-    String subjectOne = "Biology";
-    String subjectTwo = "Math";
-    String hobby = "Sports";
-    String address = "Moscow, Red Square";
-    String state = "Haryana";
-    String city = "Panipat";
+import java.util.Locale;
+
+import static utils.RandomUtils.*;
+
+public class PracticeFormPOMRandomValues extends TestBase {
+
+    Faker faker = new Faker(new Locale("ru"));
+
+    String firstName = faker.name().firstName(); // Emory
+    String lastName = faker.name().lastName();
+    String email = faker.internet().emailAddress();
+    String gender = faker.demographic().sex();
+    String mobile = getRandomPhone();
+    String birthDay = getRandomBirthDay();
+    String birthMonth = getRandomBirthMonth();
+    String birthYear = getRandomBirthYear();
+    String subject = getRandomSubject();
+    String hobby = getRandomHobby();
+    String address = faker.address().fullAddress();
+    String state = getRandomState();
+    String city = getRandomCity(state);
 
     RegistrationPage RegistrationPage = new RegistrationPage();
 
@@ -31,7 +38,7 @@ public class PracticeFormPOM extends TestBase {
                 .setGender(gender)
                 .setUserNumber(mobile)
                 .setDateOfBirth(birthDay, birthMonth, birthYear)
-                .setSubjects(subjectOne)
+                .setSubjects(subject)
                 .setHobbies(hobby)
                 .upLoadPicture()
                 .setAddress(address)
@@ -40,16 +47,16 @@ public class PracticeFormPOM extends TestBase {
                 .clickSubmitButton();
 
         //Проверка корректности заполнения формы
-        RegistrationPage.checkResult("Student Name", "Maiya M")
-                .checkResult("Student Email", "maiya@mail.ru")
-                .checkResult("Gender", "Female")
-                .checkResult("Mobile", "8800900889")
-                .checkResult("Date of Birth", "25 June,1996")
-                .checkResult("Subjects", "Biology, Maths")
-                .checkResult("Hobbies", "Sports")
+        RegistrationPage.checkResult("Student Name", firstName + " " + lastName)
+                .checkResult("Student Email", email)
+                .checkResult("Gender", gender)
+                .checkResult("Mobile", mobile)
+                .checkResult("Date of Birth", birthDay + birthMonth + "," + birthYear)
+                .checkResult("Subjects", subject)
+                .checkResult("Hobbies", hobby)
                 .checkResult("Picture", "image.png")
-                .checkResult("Address", "Moscow, Red Square")
-                .checkResult("State and City", "Haryana Panipat")
+                .checkResult("Address", address)
+                .checkResult("State and City", state + " " + city)
                 .clickCloseLargeModal();
 
 
@@ -65,9 +72,9 @@ public class PracticeFormPOM extends TestBase {
 
 
         //Проверка корректности заполнения формы
-        RegistrationPage.checkResult("Student Name", "Maiya M")
-                .checkResult("Gender", "Female")
-                .checkResult("Mobile", "8800900889")
+        RegistrationPage.checkResult("Student Name", firstName + " " + lastName)
+                .checkResult("Gender", gender)
+                .checkResult("Mobile", mobile)
                 .clickCloseLargeModal();
     }
 
