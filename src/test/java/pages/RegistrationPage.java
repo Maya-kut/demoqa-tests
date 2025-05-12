@@ -8,6 +8,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
+    CalendarComponent calendarComponent = new CalendarComponent();
     private SelenideElement firstNameInput = $("#firstName");
     private SelenideElement lastNameInput = $("#lastName");
     private SelenideElement userEmailInput = $("#userEmail");
@@ -24,8 +25,6 @@ public class RegistrationPage {
     private SelenideElement getSelectCity = $("#react-select-4-input");
     private SelenideElement submitButton = $("#submit");
     private SelenideElement closeButton = $("#closeLargeModal");
-
-    CalendarComponent calendarComponent = new CalendarComponent();
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
@@ -72,7 +71,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setSubjects(String value) {
+    public RegistrationPage setSubjects(String value, String subjectTwo) {
         subjectInput.setValue(value).pressEnter();
 
         return this;
@@ -120,7 +119,7 @@ public class RegistrationPage {
     }
 
 
-    public void clickCloseLargeModal(){
+    public void clickCloseLargeModal() {
         closeButton.click();
     }
 

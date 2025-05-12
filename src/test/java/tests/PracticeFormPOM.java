@@ -31,7 +31,7 @@ public class PracticeFormPOM extends TestBase {
                 .setGender(gender)
                 .setUserNumber(mobile)
                 .setDateOfBirth(birthDay, birthMonth, birthYear)
-                .setSubjects(subjectOne)
+                .setSubjects(subjectOne, subjectTwo)
                 .setHobbies(hobby)
                 .upLoadPicture()
                 .setAddress(address)
@@ -54,8 +54,10 @@ public class PracticeFormPOM extends TestBase {
 
 
     }
-    @Test // Заполнение только обязательных параметров
-    void PracticeFormTestRequiredFields(){
+
+    @Test
+        // Заполнение только обязательных параметров
+    void PracticeFormTestRequiredFields() {
         RegistrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
@@ -71,8 +73,9 @@ public class PracticeFormPOM extends TestBase {
                 .clickCloseLargeModal();
     }
 
-    @Test // Отправка формы без заполнения параметров
-    void ClickSubmitWithoutFillingFields(){
+    @Test
+        // Отправка формы без заполнения параметров
+    void ClickSubmitWithoutFillingFields() {
         RegistrationPage.openPage()
                 .clickSubmitButton();
 
