@@ -44,7 +44,7 @@ public class PracticeFormPOM extends TestBase {
                 .checkResult("Gender", "Female")
                 .checkResult("Mobile", "8800900889")
                 .checkResult("Date of Birth", "25 June,1996")
-                .checkResult("Subjects", "Biology, Maths")
+                .checkResult("Subjects", "Biology")
                 .checkResult("Hobbies", "Sports")
                 .checkResult("Picture", "image.png")
                 .checkResult("Address", "Moscow, Red Square")

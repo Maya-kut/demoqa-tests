@@ -97,13 +97,13 @@ public class RegistrationPage {
 
     public RegistrationPage setState(String state) {
         selectState.click();
-        getSelectState.find(String.valueOf(text("Haryana"))).click();
+        getSelectState.setValue(state).pressEnter();
         return this;
     }
 
     public RegistrationPage setCity(String city) {
         selectCity.click();
-        getSelectCity.find(String.valueOf(text("Panipat"))).click();
+        getSelectCity.setValue(city).pressEnter();
         return this;
     }
 
