@@ -10,7 +10,7 @@ import static utils.RandomUtils.*;
 
 public class PracticeFormPOMRandomValues extends TestBase {
 
-    Faker faker = new Faker(new Locale("ru"));
+    Faker faker = new Faker(new Locale("en"));
 
     String firstName = faker.name().firstName(); // Emory
     String lastName = faker.name().lastName();
@@ -51,7 +51,7 @@ public class PracticeFormPOMRandomValues extends TestBase {
                 .checkResult("Student Email", email)
                 .checkResult("Gender", gender)
                 .checkResult("Mobile", mobile)
-                .checkResult("Date of Birth", birthDay + birthMonth + "," + birthYear)
+                .checkResult("Date of Birth", birthDay + " " + birthMonth + "," + birthYear)
                 .checkResult("Subjects", subject)
                 .checkResult("Hobbies", hobby)
                 .checkResult("Picture", "image.png")
