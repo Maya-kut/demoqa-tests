@@ -38,7 +38,7 @@ public class PracticeFormPOMRandomValues extends TestBase {
                 .setGender(gender)
                 .setUserNumber(mobile)
                 .setDateOfBirth(birthDay, birthMonth, birthYear)
-                .setSubjects(subject, subjectTwo)
+                .setSubjects(subject)
                 .setHobbies(hobby)
                 .upLoadPicture()
                 .setAddress(address)

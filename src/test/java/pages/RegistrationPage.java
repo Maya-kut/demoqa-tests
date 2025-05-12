@@ -9,22 +9,22 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
-    private SelenideElement firstNameInput = $("#firstName");
-    private SelenideElement lastNameInput = $("#lastName");
-    private SelenideElement userEmailInput = $("#userEmail");
-    private SelenideElement genderWrapper = $("#genterWrapper");
-    private SelenideElement userNumberInput = $("#userNumber");
-    private SelenideElement calendarInput = $("#dateOfBirthInput");
-    private SelenideElement subjectInput = $("#subjectsInput");
-    private SelenideElement hobbyChoice = $("#hobbiesWrapper").$(byText("Sports"));
-    private SelenideElement uploadPicture = $("#uploadPicture");
-    private SelenideElement AddressTextArea = $("#currentAddress");
-    private SelenideElement selectState = $("#state");
-    private SelenideElement getSelectState = $("#react-select-3-input");
-    private SelenideElement selectCity = $("#city");
-    private SelenideElement getSelectCity = $("#react-select-4-input");
-    private SelenideElement submitButton = $("#submit");
-    private SelenideElement closeButton = $("#closeLargeModal");
+    private final SelenideElement firstNameInput = $("#firstName");
+    private final SelenideElement lastNameInput = $("#lastName");
+    private final SelenideElement userEmailInput = $("#userEmail");
+    private final SelenideElement genderWrapper = $("#genterWrapper");
+    private final SelenideElement userNumberInput = $("#userNumber");
+    private final SelenideElement calendarInput = $("#dateOfBirthInput");
+    private final SelenideElement subjectInput = $("#subjectsInput");
+    private final SelenideElement hobbyChoice = $("#hobbiesWrapper").$(byText("Sports"));
+    private final SelenideElement uploadPicture = $("#uploadPicture");
+    private final SelenideElement AddressTextArea = $("#currentAddress");
+    private final SelenideElement selectState = $("#state");
+    private final SelenideElement getSelectState = $("#react-select-3-input");
+    private final SelenideElement selectCity = $("#city");
+    private final SelenideElement getSelectCity = $("#react-select-4-input");
+    private final SelenideElement submitButton = $("#submit");
+    private final SelenideElement closeButton = $("#closeLargeModal");
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
@@ -71,7 +71,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setSubjects(String value, String subjectTwo) {
+    public RegistrationPage setSubjects(String value) {
         subjectInput.setValue(value).pressEnter();
 
         return this;
