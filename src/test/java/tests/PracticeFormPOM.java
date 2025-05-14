@@ -14,6 +14,7 @@ public class PracticeFormPOM extends TestBase {
     String birthYear = "1996";
     String subjectOne = "Biology";
     String hobby = "Sports";
+    String image = "image.png";
     String address = "Moscow, Red Square";
     String state = "Haryana";
     String city = "Panipat";
@@ -32,7 +33,7 @@ public class PracticeFormPOM extends TestBase {
                 .setDateOfBirth(birthDay, birthMonth, birthYear)
                 .setSubjects(subjectOne)
                 .setHobbies(hobby)
-                .upLoadPicture()
+                .upLoadPicture(image)
                 .setAddress(address)
                 .setState(state)
                 .setCity(city)

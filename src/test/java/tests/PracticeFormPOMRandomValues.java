@@ -6,6 +6,7 @@ import pages.RegistrationPage;
 
 import java.util.Locale;
 
+import static com.codeborne.selenide.Condition.image;
 import static utils.RandomUtils.*;
 
 public class PracticeFormPOMRandomValues extends TestBase {
@@ -22,6 +23,7 @@ public class PracticeFormPOMRandomValues extends TestBase {
     String birthYear = getRandomBirthYear();
     String subject = getRandomSubject();
     String hobby = getRandomHobby();
+    String image = getRandomImage();
     String address = faker.address().fullAddress();
     String state = getRandomState();
     String city = getRandomCity(state);
@@ -40,7 +42,7 @@ public class PracticeFormPOMRandomValues extends TestBase {
                 .setDateOfBirth(birthDay, birthMonth, birthYear)
                 .setSubjects(subject)
                 .setHobbies(hobby)
-                .upLoadPicture()
+                .upLoadPicture(image)
                 .setAddress(address)
                 .setState(state)
                 .setCity(city)
@@ -54,7 +56,7 @@ public class PracticeFormPOMRandomValues extends TestBase {
                 .checkResult("Date of Birth", birthDay + " " + birthMonth + "," + birthYear)
                 .checkResult("Subjects", subject)
                 .checkResult("Hobbies", hobby)
-                .checkResult("Picture", "image.png")
+                .checkResult("Picture", image)
                 .checkResult("Address", address)
                 .checkResult("State and City", state + " " + city)
                 .clickCloseLargeModal();

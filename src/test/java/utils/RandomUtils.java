@@ -2,7 +2,6 @@ package utils;
 
 import com.github.javafaker.Faker;
 
-import java.security.SecureRandom;
 import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -78,6 +77,11 @@ public class RandomUtils {
     public static String getRandomHobby() {
         String[] hobbies = {"Sport", "Reading", "Music"};
         return getRandomItemFromArray(hobbies);
+    }
+
+    public static String getRandomImage(){
+        String[] images = {"image.png", "image1.jpg", "image2.jpeg", "image3.jpg"};
+        return getRandomItemFromArray(images);
     }
 
     public static String getRandomState() {

@@ -83,8 +83,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage upLoadPicture() {
-        uploadPicture.uploadFromClasspath("image.png");
+    public RegistrationPage upLoadPicture(String fileName) {
+        uploadPicture.uploadFromClasspath(fileName);
 
         return this;
     }
