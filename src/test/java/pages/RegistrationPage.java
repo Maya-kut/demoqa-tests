@@ -17,6 +17,7 @@ public class RegistrationPage {
     private final SelenideElement calendarInput = $("#dateOfBirthInput");
     private final SelenideElement subjectInput = $("#subjectsInput");
     private final SelenideElement hobbyChoice = $("#hobbiesWrapper").$(byText("Sports"));
+    private final SelenideElement hobbyChoiceTuned = $("#hobbiesWrapper");
     private final SelenideElement uploadPicture = $("#uploadPicture");
     private final SelenideElement AddressTextArea = $("#currentAddress");
     private final SelenideElement selectState = $("#state");
@@ -80,6 +81,10 @@ public class RegistrationPage {
     public RegistrationPage setHobbies(String hobby) {
         hobbyChoice.click();
 
+        return this;
+    }
+    public RegistrationPage setHobbiesTuned(String hobby) {
+        hobbyChoiceTuned.$(byText(hobby)).click();
         return this;
     }
 

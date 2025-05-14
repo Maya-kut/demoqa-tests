@@ -75,7 +75,7 @@ public class RandomUtils {
     }
 
     public static String getRandomHobby() {
-        String[] hobbies = {"Sport", "Reading", "Music"};
+        String[] hobbies = {"Sports", "Reading", "Music"};
         return getRandomItemFromArray(hobbies);
     }
 
