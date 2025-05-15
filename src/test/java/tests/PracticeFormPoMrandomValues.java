@@ -6,17 +6,16 @@ import pages.RegistrationPage;
 
 import java.util.Locale;
 
-import static com.codeborne.selenide.Condition.image;
 import static utils.RandomUtils.*;
 
-public class PracticeFormPOMRandomValues extends TestBase {
+public class PracticeFormPoMrandomValues extends TestBase {
 
     Faker faker = new Faker(new Locale("en"));
 
-    String firstName = faker.name().firstName(); // Emory
-    String lastName = faker.name().lastName();
-    String email = faker.internet().emailAddress();
-    String gender = faker.demographic().sex();
+    String firstName = getRandomFirstName(); // Emory
+    String lastName = getRandomLastName();
+    String email = getRandomEmail();
+    String gender = getRandomGender();
     String mobile = getRandomPhone();
     String birthDay = getRandomBirthDay();
     String birthMonth = getRandomBirthMonth();
@@ -24,7 +23,7 @@ public class PracticeFormPOMRandomValues extends TestBase {
     String subject = getRandomSubject();
     String hobby = getRandomHobby();
     String image = getRandomImage();
-    String address = faker.address().fullAddress();
+    String address = getRandomAddress();
     String state = getRandomState();
     String city = getRandomCity(state);
 
