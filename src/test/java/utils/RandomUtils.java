@@ -8,32 +8,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class RandomUtils {
     static Faker faker = new Faker(new Locale("ru"));
 
-    public static void main(String[] args) {
-//        System.out.println(getRandomString(10));
-        System.out.println(getRandomInt(111, 99999999));
-        System.out.println(getRandomPhone());
-        System.out.println(getRandomGender());
-        System.out.println(getRandomBirthDay());
-        System.out.println(getRandomBirthMonth());
-        System.out.println(getRandomBirthYear());
-        System.out.println(getRandomSubject());
-        System.out.println(getRandomHobby());
-        System.out.println(getRandomState());
-        System.out.println(getRandomState());
-    }
-
-//    public static String getRandomString(int len) {
-////        String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-//        String AB = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-//        SecureRandom rnd = new SecureRandom();
-//        StringBuilder sb = new StringBuilder();
-//        for (int i = 0; i < len; i++)
-//            sb.append(AB.charAt(rnd.nextInt(AB.length())));
-//
-//        return sb.toString();
-//    }
-
-
     public static int getRandomInt(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
@@ -79,7 +53,7 @@ public class RandomUtils {
         return getRandomItemFromArray(hobbies);
     }
 
-    public static String getRandomImage(){
+    public static String getRandomImage() {
         String[] images = {"image.png", "image1.jpg", "image2.jpeg", "image3.jpg"};
         return getRandomItemFromArray(images);
     }
