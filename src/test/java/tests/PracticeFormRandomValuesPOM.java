@@ -8,7 +8,7 @@ import java.util.Locale;
 
 import static utils.RandomUtils.*;
 
-public class PracticeFormPoMrandomValues extends TestBase {
+public class PracticeFormRandomValuesPOM extends TestBase {
 
     Faker faker = new Faker(new Locale("en"));
 
@@ -31,7 +31,7 @@ public class PracticeFormPoMrandomValues extends TestBase {
 
     @Test
 //Отправка формы со всеми заполненными полями
-    void PracticeFormTestAllFields() {
+    void practiceFormTestAllFields() {
         RegistrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
@@ -65,7 +65,7 @@ public class PracticeFormPoMrandomValues extends TestBase {
 
     @Test
         // Заполнение только обязательных параметров
-    void PracticeFormTestRequiredFields() {
+    void practiceFormTestRequiredFields() {
         RegistrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
@@ -83,7 +83,7 @@ public class PracticeFormPoMrandomValues extends TestBase {
 
     @Test
         // Отправка формы без заполнения параметров
-    void ClickSubmitWithoutFillingFields() {
+    void clickSubmitWithoutFillingFields() {
         RegistrationPage.openPage()
                 .clickSubmitButton();
 
