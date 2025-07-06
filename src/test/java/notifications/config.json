@@ -1,1 +1,20 @@
-
+{
+  "base": {
+    "project": "My test results",
+    "environment": "",
+    "comment": "@Maiya_Lys",
+    "reportLink": "allure-report",
+    "language": "en",
+    "allureFolder": "",
+    "enableChart": false,
+    "enableSuitesPublishing": false,
+    "customData": {}
+  },
+  "telegram": {
+    "token": "8105128176:AAEycucIWqYPo37CQhmkNByDOgnJol8jFZs",
+    "chat": "1431100342",
+    "topic": "",
+    "replyTo": "",
+    "templatePath": "/templates/telegram.ftl"
+  }
+}
