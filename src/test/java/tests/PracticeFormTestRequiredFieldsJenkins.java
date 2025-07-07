@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 public class PracticeFormTestRequiredFieldsJenkins extends TestBase {
-
+    @Tag("property")
     @Tag("demoqa")
     @AfterEach
     void addAttachments() {

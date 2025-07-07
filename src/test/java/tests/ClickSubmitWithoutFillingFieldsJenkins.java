@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.*;
 
 public class ClickSubmitWithoutFillingFieldsJenkins extends TestBase {
-
+    @Tag("property")
     @Tag("demoqa")
     @AfterEach
     void addAttachments() {
