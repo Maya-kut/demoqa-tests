@@ -2,6 +2,7 @@ package tests;
 
 import helpers.Attach;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -11,7 +12,7 @@ import static io.qameta.allure.Allure.step;
 
 public class PracticeFormTestRequiredFieldsJenkins extends TestBase {
 
-
+    @Tag("demoqa")
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");

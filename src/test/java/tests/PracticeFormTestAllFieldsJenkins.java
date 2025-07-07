@@ -13,7 +13,7 @@ import static io.qameta.allure.Allure.step;
 @Tag("demoqa")
 public class PracticeFormTestAllFieldsJenkins extends TestBase {
 
-
+    @Tag("demoqa")
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Screenshot");
