@@ -7,14 +7,10 @@ public class SystemPropertiesTests {
     @Test
     @Tag("property")
     @Tag("demoqa")
-    void systemProperties4Test() {
+    void systemPropertiesTest() {
         String browser = System.getProperty("browser", "mozilla");
 
         System.out.println(browser);
-        // gradle property_test
-        // mozilla
 
-        // gradle property_test -Dbrowser=opera
-        // opera
     }
 }
